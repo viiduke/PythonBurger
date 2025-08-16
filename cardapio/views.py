@@ -90,3 +90,26 @@ def contato(request):
     <p><a href='/'>🏠 Voltar ao Início</a></p>
     """
     return HttpResponse(info_contato)
+
+def hamburguer_detalhe(request, id):
+    hamburguer_info = {
+        1: "Python Classic",
+        2: "Django Deluxe",
+        3: "Flask Burguer"
+    }
+    if id in hamburguer_info:
+        return HttpResponse(hamburguer_info[id])
+    else:
+        return HttpResponse(f"Hamburguer {id} não encontrado!")
+    
+def categoria(request, tipo):
+    categorias = {
+        'tradicional':"Hamburgueres Tradicionais",
+        'premium': "Hamburgueres Premium",
+        'vegano': "Opções Veganas"
+    }
+
+    if tipo in categorias:
+        return HttpResponse(categorias[tipo])
+    else:
+        return HttpResponse(f"Categoria '{tipo}' não existe!")

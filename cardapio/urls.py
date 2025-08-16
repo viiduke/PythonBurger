@@ -14,4 +14,12 @@ urlpatterns = [
     
     # Página de contato
     path('contato/', views.contato, name='contato'),
+
+    #URLs dinâmicas
+    path('hamburguer/<int:id>/', views.hamburguer_detalhe, name='hamburguer'),
+
+    path('categoria/<str:tipo>/', views.categoria, name='categoria'),
+
+
+
 ]
