@@ -3,19 +3,22 @@ from django.http import HttpResponse
 
 # View da página inicial do Python Burger
 def home(request):
-    # João, o atendente da entrada, dá as boas-vindas
-    mensagem = """
-    <h1>🍔 Bem-vindos ao Python Burger! 🍔</h1>
-    <h2>O melhor hambúrguer da linguagem Python!</h2>
-    <p>Olá! Eu sou o João, atendente da entrada.</p>
-    <p>Aqui você encontra os hambúrguers mais deliciosos do mundo da programação!</p>
-    <ul>
-        <li><a href='/cardapio/'>🍔 Ver Cardápio</a></li>
-        <li><a href='/sobre/'>📖 Nossa História</a></li>
-        <li><a href='/contato/'>📞 Contato</a></li>
-    </ul>
-    """
-    return HttpResponse(mensagem)
+    # João passa informações importantes para o salão
+    contexto = {
+        'atendente': 'João',
+        'restaurante': 'Python Burger',
+        'especialidade': 'programação',
+        'aberto': True,
+        
+        # Lista dos hambúrguers do dia
+        'destaques': [
+            'Python Classic',
+            'Django Master',
+            'Flask Minimal',
+        ]
+    }
+    
+    return render(request, 'cardapio/home.html', contexto)
 
 # View da página do cardápio
 def cardapio(request):
