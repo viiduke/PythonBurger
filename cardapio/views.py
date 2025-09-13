@@ -15,7 +15,9 @@ def home(request):
             'Python Classic',
             'Django Master',
             'Flask Minimal',
-        ]
+        ],
+        # Nova variável que pode estar vazia
+        'promocao_hoje': '',  # String vazia para testar
     }
     
     return render(request, 'cardapio/home.html', contexto)
