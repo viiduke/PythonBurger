@@ -1,43 +1,161 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block titulo %}Python Burger{% endblock %}</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; background: #f5f5f5; }
-        .header { background: #3776AB; color: white; padding: 1rem; text-align: center; }
-        .nav { background: #FFD43B; padding: 0.5rem; text-align: center; }
-        .nav a { margin: 0 1rem; text-decoration: none; color: #333; font-weight: bold; }
-        .content { max-width: 800px; margin: 2rem auto; padding: 1rem; background: white; border-radius: 8px; }
-        .footer { background: #333; color: white; text-align: center; padding: 1rem; margin-top: 2rem; }
-    </style>
+    <title>{% block titulo %}Python Burger - Hamburgeria Tech{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'cardapio/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'cardapio/css/style.css' %}">
 </head>
 <body>
-    <!-- Header padrão do Python Burger -->
+    <!-- Header responsivo com menu hambúrguer -->
     <header class="header">
-        <h1>🍔 Python Burger 🍔</h1>
-        <p>O melhor hambúrguer da linguagem Python!</p>
+        <div class="header-container">
+            <a href="/" class="logo">PythonBurger</a>
+            
+            <!-- Menu hambúrguer (mobile) -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <!-- Navegação (desktop) -->
+            <nav class="nav" id="navMenu">
+                <a href="/" class="nav-link active">Início</a>
+                <a href="/cardapio/" class="nav-link">Cardápio</a>
+                <a href="/sobre/" class="nav-link">Sobre Nós</a>
+                <a href="/contato/" class="nav-link">Contato</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- Menu de navegação padrão -->
-    <nav class="nav">
-        <a href="/">🏠 Início</a>
-        <a href="/cardapio/">🍔 Cardápio</a>
-        <a href="/sobre/">📖 Nossa História</a>
-        <a href="/contato/">📞 Contato</a>
-    </nav>
-
-    <!-- Área de conteúdo personalizable -->
+    <!-- Área de conteúdo -->
     <main class="content">
         {% block conteudo %}
-        <p>Conteúdo padrão da página</p>
+        <div class="default-content">
+            <h2>Bem-vindo ao Python Burger!</h2>
+            <p>A hamburgeria que combina código limpo com sabores excepcionais. Aqui, cada prato é desenvolvido com a precisão de um algoritmo perfeito.</p>
+            
+            <div class="hero-code">
+                <code>
+                    def experiencia_gastronomica():<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;return "Sabor excepcional + Ambiente tech"
+                </code>
+            </div>
+            
+            <div class="tech-badge">🐍 Powered by Python</div>
+            <div class="tech-badge">🍔 Compiled with Love</div>
+        </div>
         {% endblock %}
     </main>
 
-    <!-- Footer padrão -->
+    <!-- Footer convencional moderno -->
     <footer class="footer">
-        <p>© 2024 Python Burger - Todos os direitos reservados</p>
+        <div class="footer-container">
+            <div class="footer-grid">
+                
+                <div class="footer-section">
+                    <span class="footer-icon">📍</span>
+                    <h4>Nossa Localização</h4>
+                    <p><strong>Rua dos Desenvolvedores, 123</strong></p>
+                    <p>Tech District - Centro</p>
+                    <p>São Paulo - SP</p>
+                    <p>CEP: 01234-567</p>
+                    <div class="info-tag">Estacionamento Grátis</div>
+                </div>
+                
+                <div class="footer-section">
+                    <span class="footer-icon">📞</span>
+                    <h4>Fale Conosco</h4>
+                    <p><strong>Atendimento:</strong></p>
+                    <p>(11) 3000-PYTHON</p>
+                    <p>(11) 3000-7999</p>
+                    <p><strong>Delivery:</strong></p>
+                    <p>(11) 99999-8888</p>
+                    <div class="info-tag">WhatsApp</div>
+                    <div class="info-tag">Telegram</div>
+                </div>
+                
+                <div class="footer-section">
+                    <span class="footer-icon">🕒</span>
+                    <h4>Horário Hamburgeria</h4>
+                    <p>🗓️ <strong>Segunda a Quinta</strong></p>
+                    <p>11h30 às 23h00</p>
+                    <p>🗓️ <strong>Sexta e Sábado</strong></p>
+                    <p>11h30 às 01h00</p>
+                    <p>🗓️ <strong>Domingo</strong></p>
+                    <p>11h30 às 22h00</p>
+                </div>
+                
+                <div class="footer-section">
+                    <span class="footer-icon">🚚</span>
+                    <h4>Delivery Express</h4>
+                    <p><strong>Todos os dias</strong></p>
+                    <p>11h30 às 23h45</p>
+                    <p><strong>Área de Entrega:</strong></p>
+                    <p>Raio de 15km</p>
+                    <div class="info-tag">Entrega em 30min</div>
+                    <div class="info-tag">Taxa Grátis R$35+</div>
+                </div>
+                
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2024 Python Burger - Hamburgeria Tech | CNPJ: 12.345.678/0001-90</p>
+                <p>Desenvolvido com ❤️ e muito código Python</p>
+            </div>
+        </div>
     </footer>
+
+    <script src="{% static 'cardapio/js/script.js' %}"></script>
+    
+    <script>
+        // JavaScript para menu hambúrguer e navegação ativa
+        function toggleMenu() {
+            const nav = document.getElementById('navMenu');
+            const hamburger = document.querySelector('.hamburger');
+            
+            nav.classList.toggle('mobile-open');
+            hamburger.classList.toggle('active');
+        }
+        
+        // Fechar menu ao clicar fora
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('navMenu');
+            const hamburger = document.querySelector('.hamburger');
+            
+            if (!hamburger.contains(event.target) && !nav.contains(event.target)) {
+                nav.classList.remove('mobile-open');
+                hamburger.classList.remove('active');
+            }
+        });
+        
+        // Marcar link ativo baseado na URL atual
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const currentPage = window.location.pathname;
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Fechar menu mobile ao clicar em link
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const nav = document.getElementById('navMenu');
+                    const hamburger = document.querySelector('.hamburger');
+                    
+                    nav.classList.remove('mobile-open');
+                    hamburger.classList.remove('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>

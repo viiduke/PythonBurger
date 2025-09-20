@@ -1,0 +1,380 @@
+/* Python Burger - Layout Moderno e Inovador */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+/* Reset e base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #2c3e50;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
+    min-height: 100vh;
+}
+
+/* Header com navegação destacada */
+.header {
+    background: linear-gradient(135deg, #4a90a4 0%, #87bdd8 50%, #ffd43b 100%);
+    color: #ffffff;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+/* Logo harmonizado */
+.logo {
+    font-family: 'Fira Code', monospace;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #ffd43b;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.logo::before {
+    content: '<';
+    color: #ffffff;
+    margin-right: 0.5rem;
+}
+
+.logo::after {
+    content: '/>';
+    color: #ffffff;
+    margin-left: 0.5rem;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 15px rgba(255, 212, 59, 0.4);
+}
+
+/* Navegação com fundo amarelo */
+.nav {
+    display: flex;
+    gap: 0.3rem;
+    background: #ffd43b;
+    padding: 0.5rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    color: #2c3e50;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    background: transparent;
+    border: none;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+.nav-link.active {
+    background: #3776ab;
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(55, 118, 171, 0.3);
+}
+
+/* Área de conteúdo */
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    min-height: 60vh;
+}
+
+.default-content {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.default-content h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #3776ab 0%, #ffd43b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.default-content p {
+    font-size: 1.3rem;
+    color: #6c757d;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.hero-code {
+    background: #1e1e1e;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin: 2rem auto;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.hero-code code {
+    font-family: 'Fira Code', monospace;
+    color: #ffd43b;
+    font-size: 1.1rem;
+}
+
+/* Footer grid sem quebras */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section {
+    text-align: center;
+    min-width: 0; /* Permite que o conteúdo encolha */
+}
+
+.footer-section p {
+    margin-bottom: 0.3rem;
+    line-height: 1.4;
+    text-align: center;
+    color: #bdc3c7;
+    font-size: 0.9rem;
+}
+
+.footer-section h4 {
+    color: #ffd43b;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap; /* Evita quebra do título */
+}
+
+.info-tag {
+    display: inline-block;
+    background: rgba(255, 212, 59, 0.15);
+    color: #ffd43b;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    margin: 0.1rem;
+    border: 1px solid rgba(255, 212, 59, 0.3);
+}
+
+/* Footer bottom */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #95a5a6;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.tech-badge {
+    display: inline-block;
+    background: linear-gradient(45deg, #3776ab, #ffd43b);
+    color: #2c3e50;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-family: 'Fira Code', monospace;
+    font-weight: 500;
+    margin: 0.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Animações suaves */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footer-section {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.footer-section:nth-child(1) { animation-delay: 0.1s; }
+.footer-section:nth-child(2) { animation-delay: 0.2s; }
+.footer-section:nth-child(3) { animation-delay: 0.3s; }
+.footer-section:nth-child(4) { animation-delay: 0.4s; }
+
+/* Menu hambúrguer */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.hamburger:hover {
+    background: rgba(255, 212, 59, 0.2);
+    transform: scale(1.05);
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #ffffff;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Navegação mobile */
+.nav.mobile-open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 2rem;
+    background: #ffd43b;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    gap: 0.5rem;
+    z-index: 1000;
+    min-width: 200px;
+}
+
+.nav.mobile-open .nav-link {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+/* Footer estilizado */
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+}
+
+/* Responsividade melhorada */
+@media (max-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .footer-section h4 {
+        white-space: normal;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        position: relative;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+    }
+    
+    .logo {
+        font-size: 1.5rem;
+    }
+    
+    .content {
+        padding: 2rem 1rem;
+    }
+    
+    .default-content h2 {
+        font-size: 2.5rem;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .footer-container {
+        padding: 0 1rem;
+    }
+    
+    .hero-code {
+        margin: 1rem;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .default-content h2 {
+        font-size: 2rem;
+    }
+    
+    .logo {
+        font-size: 1.3rem;
+    }
+    
+    .footer-section p {
+        font-size: 0.85rem;
+    }
+    
+    .header-container {
+        padding: 0 1rem;
+    }
+    
+    .nav.mobile-open {
+        right: 1rem;
+        min-width: 180px;
+    }
+}

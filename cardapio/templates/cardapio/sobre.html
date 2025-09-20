@@ -1,0 +1,26 @@
+<!-- Herda do template base -->
+{% extends 'cardapio/base.html' %}
+
+<!-- Personaliza o título da página -->
+{% block titulo %}Python Burger - Nossa História{% endblock %}
+
+<!-- Conteúdo específico da página -->
+{% block conteudo %}
+    <h1>📖 Nossa História</h1>
+    <h2>Olá! Eu sou o {{ atendente }}, guardião da história do Python Burger!</h2>
+    
+    <p>O Python Burger nasceu em 2024, quando um grupo de programadores Python 
+    percebeu que precisava de um lugar especial para comer enquanto codam!</p>
+    
+    <p>Nossa missão é simples: criar hambúrguers tão elegantes e saborosos 
+    quanto o código Python - simples na aparência, mas poderosos no resultado!</p>
+    
+    <h3>🏆 Nossos Valores:</h3>
+    <ul>
+        <li><strong>Simplicidade:</strong> Como Python, priorizamos o que funciona</li>
+        <li><strong>Qualidade:</strong> Cada hambúrguer é testado e aprovado</li>
+        <li><strong>Comunidade:</strong> Lugar de encontro para pythonistas</li>
+    </ul>
+    
+    <p><a href='/'>🏠 Voltar ao Início</a></p>
+{% endblock %}

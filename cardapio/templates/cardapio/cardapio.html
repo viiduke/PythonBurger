@@ -1,0 +1,22 @@
+<!-- Herda do template base -->
+{% extends 'cardapio/base.html' %}
+
+<!-- Personaliza o título da página -->
+{% block titulo %}Python Burger - Cardápio{% endblock %}
+
+<!-- Conteúdo específico da página -->
+{% block conteudo %}
+    <h1>🍔 Cardápio do Python Burger 🍔</h1>
+    <h2>Oi! Eu sou a {{ atendente }}, sua especialista em hambúrguers!</h2>
+    <p>Aqui estão nossos hambúrguers temáticos de programação:</p>
+    
+    <h3>🐍 Linha Python:</h3>
+    <ul>
+        {% for hamburguer in hamburguers %}
+            <li><strong>{{ hamburguer.nome }}</strong> - R$ {{ hamburguer.preco }}<br>
+                {{ hamburguer.descricao }}</li>
+        {% endfor %}
+    </ul>
+    
+    <p><a href='/'>🏠 Voltar ao Início</a></p>
+{% endblock %}

@@ -1,0 +1,30 @@
+<!-- Herda do template base -->
+{% extends 'cardapio/base.html' %}
+
+<!-- Personaliza o título da página -->
+{% block titulo %}Python Burger - Fale Conosco{% endblock %}
+
+<!-- Conteúdo específico da página -->
+{% block conteudo %}
+    <h1>📞 Fale Conosco</h1>
+    <h2>Oi! Eu sou a {{ atendente }}, responsável pelo atendimento!</h2>
+    
+    <p>Precisa falar conosco? Aqui estão nossas informações:</p>
+    
+    <h3>📍 Endereço:</h3>
+    <p>Rua dos Pythonistas, 3776<br>
+    Bairro Framework - São Paulo/SP<br>
+    CEP: 01234-567</p>
+    
+    <h3>📱 Telefones:</h3>
+    <ul>
+        <li><strong>Pedidos:</strong> (11) 3776-2024</li>
+        <li><strong>WhatsApp:</strong> (11) 9-9999-9999</li>
+    </ul>
+    
+    <h3>🕒 Horário de Funcionamento:</h3>
+    <p>Segunda a Sexta: 11h às 22h<br>
+    Sábado e Domingo: 12h às 20h</p>
+    
+    <p><a href='/'>🏠 Voltar ao Início</a></p>
+{% endblock %}
