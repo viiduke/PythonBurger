@@ -1,31 +1,6 @@
-/* Python Burger - Layout BURGRY com Suporte a Modo Claro/Escuro */
+/* Python Burger - Layout BURGRY Corrigido */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
-
-/* ===== VARIÁVEIS PARA MODO CLARO/ESCURO ===== */
-:root {
-    /* MODO ESCURO (atual/padrão) */
-    --bg-primary: #000000;          /* Fundo principal preto */
-    --bg-secondary: #1a1a1a;        /* Fundo secundário escuro */
-    --bg-card: #333333;             /* Fundo dos cards */
-    --text-primary: #ffffff;        /* Texto principal branco */
-    --text-secondary: #cccccc;      /* Texto secundário cinza claro */
-    --text-muted: #6c757d;          /* Texto esmaecido */
-    --border-color: rgba(255, 255, 255, 0.1);
-    --shadow-color: rgba(0, 0, 0, 0.2);
-}
-
-/* MODO CLARO */
-[data-theme="light"] {
-    --bg-primary: #ffffff;          /* Fundo principal branco */
-    --bg-secondary: #f8f9fa;        /* Fundo secundário claro */
-    --bg-card: #ffffff;             /* Fundo dos cards branco */
-    --text-primary: #2c3e50;        /* Texto principal escuro */
-    --text-secondary: #495057;      /* Texto secundário cinza escuro */
-    --text-muted: #6c757d;          /* Texto esmaecido */
-    --border-color: rgba(0, 0, 0, 0.1);
-    --shadow-color: rgba(0, 0, 0, 0.1);
-}
 
 /* Reset e base */
 * {
@@ -44,8 +19,8 @@ body {
 
 /* Header com estilo BURGRY */
 .header {
-    background: var(--bg-primary);
-    color: var(--text-primary);
+    background: #000000;
+    color: #ffffff;
     padding: 1rem 0;
     position: sticky;
     top: 0;
@@ -67,7 +42,7 @@ body {
     font-family: 'Fira Code', monospace;
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--text-primary);
+    color: #ffffff;
     text-decoration: none;
     transition: all 0.3s ease;
 }
@@ -89,7 +64,7 @@ body {
 }
 
 .nav-link {
-    color: var(--text-primary);
+    color: #ffffff;
     text-decoration: none;
     padding: 0.5rem 0;
     border-radius: 0;
@@ -118,7 +93,7 @@ body {
 /* Botão Shop Online estilo BURGRY */
 .shop-btn {
     background: #ffd43b;
-    color: var(--bg-primary);
+    color: #000000;
     text-decoration: none;
     padding: 0.75rem 1.5rem;
     border-radius: 4px;
@@ -191,8 +166,8 @@ body {
 
 /* Footer estilo BURGRY */
 .footer {
-    background: var(--bg-primary);
-    color: var(--text-primary);
+    background: #000000;
+    color: #ffffff;
     padding: 3rem 0 1rem;
     margin-top: 0;
 }
@@ -215,14 +190,14 @@ body {
     font-family: 'Fira Code', monospace;
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--text-primary);
+    color: #ffffff;
     text-decoration: none;
     display: block;
     margin-bottom: 1rem;
 }
 
 .footer-brand p {
-    color: var(--text-secondary);
+    color: #cccccc;
     line-height: 1.6;
     font-size: 0.9rem;
 }
@@ -234,7 +209,7 @@ body {
 }
 
 .footer-section h4 {
-    color: var(--text-primary);
+    color: #ffffff;
     font-size: 0.9rem;
     font-weight: 600;
     margin-bottom: 1rem;
@@ -251,7 +226,7 @@ body {
 }
 
 .footer-section ul li a {
-    color: var(--text-secondary);
+    color: #cccccc;
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.3s ease;
@@ -262,13 +237,13 @@ body {
 }
 
 .footer-section p {
-    color: var(--text-secondary);
+    color: #cccccc;
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
 }
 
 .footer-section p strong {
-    color: var(--text-primary);
+    color: #ffffff;
 }
 
 .footer-label {
@@ -287,8 +262,8 @@ body {
 }
 
 .social-link {
-    background: var(--bg-card);
-    color: var(--text-primary);
+    background: #333;
+    color: #ffffff;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -302,11 +277,11 @@ body {
 
 .social-link:hover {
     background: #ffd43b;
-    color: var(--bg-primary);
+    color: #000000;
 }
 
 .footer-bottom {
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid #333;
     padding-top: 1rem;
     text-align: center;
     max-width: 1200px;
@@ -339,9 +314,9 @@ body {
 }
 
 .hamburger span {
-    background: var(--text-primary);
     width: 25px;
     height: 3px;
+    background: #ffffff;
     margin: 3px 0;
     transition: all 0.3s ease;
     border-radius: 2px;
@@ -366,10 +341,10 @@ body {
     position: absolute;
     top: 100%;
     right: 2rem;
-    background: var(--bg-primary);
-    border: 1px solid var(--border-color);
+    background: #000000;
+    border: 1px solid #333;
     border-radius: 8px;
-    box-shadow: 0 8px 25px var(--shadow-color);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
     padding: 1rem;
     gap: 0.5rem;
     z-index: 1000;
@@ -380,12 +355,12 @@ body {
     text-align: center;
     padding: 1rem;
     border-radius: 4px;
-    color: var(--text-primary);
+    color: #ffffff;
     border-bottom: none;
 }
 
 .nav.mobile-open .nav-link:hover {
-    background: var(--bg-card);
+    background: #333;
     color: #ffd43b;
     border-bottom: none;
 }
