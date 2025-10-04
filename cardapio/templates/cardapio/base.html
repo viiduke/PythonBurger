@@ -6,6 +6,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <title>{% block titulo %}Python Burger - Hamburgeria Tech{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'cardapio/css/base.css' %}">
     <link rel="stylesheet" href="{% static 'cardapio/css/style.css' %}">
@@ -15,7 +19,7 @@
     <!-- Header responsivo com menu hambúrguer -->
     <header class="header">
         <div class="header-container">
-            <a href="/" class="logo">PYTHON<span style="color: #ffd43b;">BURGER</span></a>
+            <a href="/" class="logo">PYTHON<span style="color: #FFA500;">BURGER</span></a>
 
             <!-- Menu hambúrguer (mobile) -->
             <div class="hamburger" onclick="toggleMenu()">
@@ -31,6 +35,13 @@
                 <a href="/cardapio/" class="nav-link">Cardápio</a>
                 <a href="/contato/" class="nav-link">Contato</a>
                 <a href="/cardapio/" class="shop-btn">Peça Online</a>
+
+                <!-- Botão de alternância modo claro/escuro -->
+                <button id="theme-toggle" class="theme-toggle" aria-label="Alternar modo claro/escuro">
+                    <span class="theme-icon theme-icon-dark">🌙</span>
+                    <span class="theme-icon theme-icon-light">☀️</span>
+                </button>
+            </nav>
             </nav>
         </div>
     </header>
@@ -40,70 +51,76 @@
         {% block conteudo %}
         <div class="default-content">
             <h2>Bem-vindo ao Python Burger!</h2>
-            <p>A hamburgeria que combina código limpo com sabores excepcionais. Aqui, cada prato é desenvolvido com a
-                precisão de um algoritmo perfeito.</p>
+            <p>A hamburgeria que combina qualidade com sabores excepcionais. Aqui, cada prato é preparado com dedicação
+                e ingredientes premium.</p>
 
-            <div class="hero-code">
-                <code>
-                    def experiencia_gastronomica():<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;return "Sabor excepcional + Ambiente tech"
-                </code>
-            </div>
-
-            <div class="tech-badge">🐍 Powered by Python</div>
-            <div class="tech-badge">🍔 Compilado com Amor</div>
         </div>
         {% endblock %}
     </main>
 
     <footer class="footer">
-    <div class="footer-container">
-        <div class="footer-brand">
-            <a href="/" class="footer-logo">PYTHON<span style="color: #ffd43b;">BURGER</span></a>
-            <p>Onde código limpo encontra sabores excepcionais. Desenvolvendo experiências gastronômicas únicas desde 2024.</p>
-        </div>
-        
-        <div class="footer-sections">
-            <div class="footer-section">
-                <h4>SUPORTE</h4>
-                <ul>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Política de Privacidade</a></li>
-                    <li><a href="#">Termos e Condições</a></li>
-                    <li><a href="#">Contato</a></li>
-                </ul>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="/" class="footer-logo">PYTHON<span style="color: #FFA500;">BURGER</span></a>
+                <p>Hambúrguers artesanais e sabores excepcionais. Criando experiências gastronômicas únicas desde 2024.
+                </p>
             </div>
-            
-            <div class="footer-section">
-                <h4>TELEFONE</h4>
-                <p><strong>+55 (11) 3000-PYTHON</strong></p>
-                <p class="footer-label">EMAIL</p>
-                <p><strong>contato@pythonburger.com</strong></p>
-            </div>
-            
-            <div class="footer-section">
-                <h4>ENDEREÇO</h4>
-                <p><strong>Rua dos Desenvolvedores, 123</strong></p>
-                <p>Tech District - Centro</p>
-                <p>São Paulo - SP</p>
-                <p class="footer-label">SIGA-NOS</p>
-                <div class="social-links">
-                    <a href="#" class="social-link">f</a>
-                    <a href="#" class="social-link">t</a>
-                    <a href="#" class="social-link">i</a>
-                    <a href="#" class="social-link">in</a>
+
+            <div class="footer-sections">
+                <div class="footer-section">
+                    <h4>SUPORTE</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Termos e Condições</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>TELEFONE</h4>
+                    <p><strong>+55 (11) 3000-PYTHON</strong></p>
+                    <p class="footer-label">EMAIL</p>
+                    <p><strong>contato@pythonburger.com</strong></p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>ENDEREÇO</h4>
+                    <p><strong>Rua das Palmeiras, 123</strong></p>
+                    <p>Centro - Cidade</p>
+                    <p>São Paulo - SP</p>
+                    <p class="footer-label">SIGA-NOS</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">f</a>
+                        <a href="#" class="social-link">t</a>
+                        <a href="#" class="social-link">i</a>
+                        <a href="#" class="social-link">in</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <div class="footer-bottom">
-        <p>Copyright © 2024. Todos os direitos reservados.</p>
-        <p>Desenvolvido com Python por Alexandre Santos</p>
-    </div>
-</footer>
+
+        <div class="footer-bottom">
+            <p>Copyright © 2024. Todos os direitos reservados.</p>
+            <p>Desenvolvido por Alexandre Santos</p>
+        </div>
+    </footer>
 
     <script src="{% static 'cardapio/js/script.js' %}"></script>
+
+
+
+    <!-- 👇 ADICIONE O CÓDIGO DO WHATSAPP AQUI 👇 -->
+    <!-- Botão Flutuante WhatsApp -->
+    <a href="https://wa.me/5511999998888?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido%20no%20Python%20Burger"
+        class="whatsapp-floating" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp">
+        <svg viewBox="0 0 32 32" class="whatsapp-icon">
+            <path fill="currentColor"
+                d="M16 0C7.164 0 0 7.163 0 16c0 2.826.735 5.607 2.135 8.055L.066 31.87a.5.5 0 0 0 .614.614l7.814-2.07A15.906 15.906 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.455c-2.516 0-4.98-.708-7.127-2.046a.5.5 0 0 0-.423-.058l-5.44 1.441 1.44-5.44a.5.5 0 0 0-.057-.423A13.381 13.381 0 0 1 2.545 16c0-7.432 6.023-13.455 13.455-13.455S29.455 8.568 29.455 16 23.432 29.455 16 29.455z" />
+            <path fill="currentColor"
+                d="M23.15 19.492c-.372-.186-2.197-1.084-2.537-1.208-.34-.124-.587-.186-.835.186-.248.372-.96 1.208-1.176 1.456-.217.248-.434.28-.806.093-1.826-.913-3.025-1.629-4.228-3.694-.319-.547.319-.508.912-.992.124-.217.062-.403-.031-.565-.093-.162-.835-2.012-1.145-2.755-.301-.723-.608-.625-.835-.636-.217-.01-.465-.012-.713-.012s-.65.093-.99 1.208c-1.32 1.115-1.735 2.477-1.815 2.906-.161.868.217 1.753 1.35 3.13 1.851 2.245 4.097 3.72 7.365 5.053 1.109.452 1.996.723 2.68.928 1.104.331 2.11.284 2.904.172.886-.132 2.197-.898 2.506-1.766.31-.868.31-1.611.217-1.766-.093-.155-.34-.248-.713-.434z" />
+        </svg>
+    </a>
 
     <script>
         // JavaScript para menu hambúrguer e navegação ativa
@@ -148,6 +165,38 @@
                     hamburger.classList.remove('active');
                 });
             });
+        });
+
+        // Comportamento inteligente do botão "Peça Online"
+        document.addEventListener('DOMContentLoaded', function () {
+            const shopBtn = document.querySelector('.shop-btn');
+
+            if (shopBtn) {
+                shopBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const currentPage = window.location.pathname;
+
+                    // Se estiver na home (/)
+                    if (currentPage === '/') {
+                        const menuSection = document.querySelector('.menu-section');
+
+                        if (menuSection) {
+                            // Scroll suave até o cardápio
+                            menuSection.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        } else {
+                            // Fallback: se não encontrar a seção, redireciona
+                            window.location.href = '/cardapio/';
+                        }
+                    } else {
+                        // Em qualquer outra página: redireciona para /cardapio/
+                        window.location.href = '/cardapio/';
+                    }
+                });
+            }
         });
     </script>
 </body>
